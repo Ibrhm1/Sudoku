@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Games | Sudoku</title>
+    <link rel="stylesheet" href="MainPage.css"/>
+  </head>
+  <body>
+    <!-- header -->
+    <h1 class="sudoku-title">Sudoku</h1>
+    <hr />
+    <!-- error -->
+    <div class="errors">
+      <h2 class="text-errors">Kesalahan :</h2>
+      <h2 id="number-errors">0</h2>
+    </div>
+    <!-- 9x9 board -->
+    <div id="board"></div>
+    <!-- Digits selection -->
+    <div id="digits" class="digits-container"></div>
+    <!-- buttons -->
+    <div class="button">
+      <ul class="list-button">
+        <li>
+          <button onclick="resetGame()" class="button-reset">Reset Game</button>
+        </li>
+      </ul>
+    </div>
+    <script defer src="MainPage.js"></script>
+  </body>
+</html>

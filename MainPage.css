@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+hr {
+  max-width: 90%;
+  width: 500px;
+  margin: 5px auto;
+}
+
+.sudoku-title {
+  margin-top: 1rem;
+}
+
+.Sudoku {
+  padding: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.errors {
+  display: flex;
+  justify-content: center;
+}
+
+.text-errors {
+  color: coral;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-right: 5px;
+}
+
+#number-errors {
+  color: coral;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#board {
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  width: 10%;
+  height: 10%;
+  border: 1px solid lightgray;
+  font-size: calc(1rem + 0.2vw);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#digits {
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  margin: 10px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.number {
+  width: calc(10% - 4px);
+  height: calc(10% - 4px);
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 3px;
+  font-size: calc(1rem + 0.2vw);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.number-selected {
+  background-color: gray;
+}
+
+.tile {
+  transition: transform 0.2s;
+}
+
+.tile:hover {
+  transform: scale(1.1);
+}
+
+.tile-start {
+  background-color: whitesmoke;
+}
+
+.horizontal-line {
+  border-bottom: 1px solid black;
+}
+
+.vertical-line {
+  border-right: 1px solid black;
+}
+
+.button .list-button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin: 0;
+}
+
+.button .list-button li {
+  list-style-type: none;
+  margin: 0;
+}
+
+.button .list-button .button-reset {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(187, 177, 177);
+  text-decoration: none;
+  font-family: "Gill Sans MT", sans-serif;
+  font-size: 18px;
+  color: black;
+  padding: 5px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.button .list-button .button-reset:hover {
+  background-color: rgb(160, 160, 160);
+  transform: scale(1.05);
+}
+
+#game-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(31, 26, 26, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#game-over.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.game-over-overlay {
+  background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.game-over-overlay h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.7rem;
+  color: darkslategrey;
+  margin-bottom: 20px;
+}
+
+.game-over-overlay .text-game-header {
+  font-family: sans-serif;
+  color: black;
+  font-size: 2rem;
+}
+
+.game-over-overlay button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.game-over-overlay button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .number {
+    width: calc(10% - 4px);
+    height: calc(10% - 4px);
+  }
+
+  .button .list-button .button-reset {
+    font-size: 16px;
+    padding: 5px 15px;
+  }
+
+  .game-over-overlay {
+    padding: 20px;
+  }
+
+  .game-over-overlay h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .number {
+    width: calc(10% - 4px);
+    height: calc(10% - 4px);
+    font-size: calc(0.8rem + 0.2vw);
+  }
+
+  .game-over-overlay {
+    padding: 15px;
+  }
+
+  .game-over-overlay h1 {
+    font-size: 1.2rem;
+  }
+}
